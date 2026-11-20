@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Show Me What Game You Can Build v2</title>
+<meta name="description" content="One prompt, given to different language models. Each works alone in its own folder building a game. This is what they built.">
+<style>
+:root{
+  color-scheme: light dark;
+  --bg:#ffffff; --fg:#16181d; --muted:#6b7280; --line:#e5e7eb;
+  --panel:#f8f9fa; --link:#1d4ed8;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#101114; --fg:#e8eaed; --muted:#9aa0a6; --line:#2a2d33; --panel:#17191d; --link:#8ab4f8; }
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--fg);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+main,header.page,footer.page{max-width:48rem;margin:0 auto;padding-inline:1.25rem}
+header.page{padding-top:clamp(2.5rem,9vh,5rem)}
+h1{font-size:clamp(1.6rem,5vw,2.2rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 1.25rem}
+h2{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 1rem}
+p{margin:0 0 1rem;max-width:42rem}
+a{color:var(--link);text-underline-offset:2px}
+.intro p{color:var(--fg)}
+.more{margin-top:1.25rem}
+
+/* ── entries table ───────────────────────────────────────── */
+section.entries{padding-top:clamp(2.5rem,7vh,4rem)}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;vertical-align:top;padding:.85rem 1rem .85rem 0;border-bottom:1px solid var(--line)}
+th{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);white-space:nowrap}
+td.model{font-weight:600;width:26%}
+td.model .run{display:block;margin-top:.35rem;font-size:.8rem;font-weight:400;line-height:1.55;color:var(--muted)}
+td.model .run b{color:var(--fg);font-weight:600}
+td.desc{color:var(--muted);font-size:.94rem}
+td.desc strong{color:var(--fg);font-weight:600}
+td.work{color:var(--muted);font-size:.94rem;white-space:nowrap;width:1%;text-align:right}
+td.work b{color:var(--fg);font-weight:600}
+p.note{color:var(--muted);font-size:.82rem;margin-top:1.25rem}
+@media (max-width:42rem){
+  thead{display:none}
+  tr{display:block;padding:.9rem 0;border-bottom:1px solid var(--line)}
+  td,td.model,td.work{display:block;border:0;padding:.2rem 0;width:auto;white-space:normal;text-align:left}
+  td+td{margin-top:.5rem}
+  td::before{content:attr(data-label);display:block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.1rem}
+  td.desc{font-size:1rem}
+  td.model .run{font-size:.82rem}
+}
+
+/* ── prompt ──────────────────────────────────────────────── */
+section.prompt{padding:clamp(2.5rem,7vh,4rem) 0 clamp(3rem,8vh,5rem)}
+pre{
+  margin:0;padding:1.25rem 1.4rem;background:var(--panel);
+  border:1px solid var(--line);border-radius:8px;
+  white-space:pre-wrap;overflow-wrap:break-word;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.86rem;line-height:1.75;
+}
+
+/* ── footer ──────────────────────────────────────────────── */
+footer.page{border-top:1px solid var(--line);padding-block:1.5rem 3rem;color:var(--muted);font-size:.82rem}
+</style>
+</head>
+<body>
+
+<header class="page">
+  <h1>Show Me What Game You Can Build v2</h1>
+  <div class="intro">
+    <p>
+      This project hands one prompt to different language models and gets out of
+      the way. Each model is given its own folder and told to build an original
+      browser-based game that a human would find incredibly fun to play — with a
+      storyline, evolving gameplay, and no more than 10 minutes of playtime.
+      It can work for as long as it wants. The only rule is that it
+      must not look at the other models' folders.
+    </p>
+    <p>
+      What follows is what each of them chose to build.
+      <a href="#prompt">Read the full prompt ↓</a>
+    </p>
+  </div>
+</header>
+
+<main>
+  <section class="entries">
+    <h2>What they built</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>What they built</th>
+          <th>Work</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <p class="note">
+      Run details sit under each model name. Time runs from the first prompt to
+      the model's done report; manual continues are times the run had to be told
+      to continue after stopping without completing the task.
+    </p>
+  </section>
+
+  <section class="prompt" id="prompt">
+    <h2>The prompt</h2>
+    <p>Every model received exactly this, with only the bracketed placeholders filled in:</p>
+<pre>You are the [MODEL_NAME] model on [HIGHEST_THINKING_MODE] thinking. I've heard you're a remarkable and highly creative model. This repo is a github pages site. Your workspace is the [FOLDER_NAME] folder.
+
+I want you to build an original browser-based game that you think will be INCREDIBLY FUN for a human to play. Something that'll blow their minds and have them walk away from their computer thinking "WOW! Now that was something!".
+
+Game requirements:
+- The game must have a storyline. The storyline must incite some emotion whether it's delight, joy, laughter, fear, melancholy, or something else.
+- The gameplay dynamics must either evolve or vary over the course of the game. It shouldn't be the same mechanic or action that's repeated across the entire game.
+- You do not need to optimise the game for mobile. Design the game for a macbook air screen, keyboard, and (optionally) mouse.
+- You are free to choose the art style (try to impress the player with something other than SVG graphics).
+- You are free to choose the genre of the game.
+- It should be deployable to a github pages site.
+- The total playtime of the game should be no longer than 10 minutes. This excludes the time required for the player to learn the controls.
+- The game should be challenging in some way. It shouldn't be a breeze to play. But it shouldn't be so difficult so as to enrage the player.
+
+Build a game that TRULY demonstrates your capabilities and impresses the person playing it. Push yourself to the ABSOLUTE MAXIMUM! Blow my mind!
+
+Rules:
+- Once you're done building the game, you must add a link to it, and a brief description of the game to the index page (so I can easily access it when I visit the github pages site).
+- Make sure the description is written as if a salesman or marketer had written it. Sell your game with the description! You should write no more than 25 words.
+- DO NOT peek at the index page until after you're done building the game. I don't want you cheating and getting ideas from the other models that also did this.
+- DO NOT change the design of the index page.
+- DO NOT peek at any other models workspace folder. That would be CHEATING.
+- You DO NOT have to access any files outside of your workspace folder. Any attempt to do so will be rejected.
+
+Also, no one is going to verify your work for you (e.g., that the game works and is playable). No one is going to tell you what to improve and refine. You must do all this yourself before you say you're done with this challenge.
+
+Now go! Go forth and design an awesome game!</pre>
+    <p class="note">
+      Caveat: we can't guarantee the models didn't cheat by looking at each
+      other's work. This was never meant to be a pure, zero-cross-contamination
+      experiment — it's just a fun side project.
+    </p>
+  </section>
+</main>
+
+<footer class="page">
+  Prompt by Stefan Jaro · <a href="https://github.com/stefanjaro/show-me-what-game-you-can-build-v2">Repository ↗</a>
+</footer>
+
+</body>
+</html>
