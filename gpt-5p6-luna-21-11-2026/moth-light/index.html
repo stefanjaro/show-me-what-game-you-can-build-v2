@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090b12" />
+    <meta
+      name="description"
+      content="MOTH//LIGHT is a short, cinematic signal-running game about carrying one last voice across the dark."
+    />
+    <title>MOTH//LIGHT - A signal in the dark</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main id="app" aria-label="MOTH//LIGHT interactive game">
+      <canvas id="gameCanvas" aria-label="Game canvas"></canvas>
+      <div class="film-grain" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <header class="topbar">
+        <div class="brand-lockup">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>LANTERN/09</span>
+        </div>
+        <div class="topbar-center" id="topbarCenter">A SIGNAL IN THE DARK</div>
+        <button class="sound-button" id="soundButton" type="button" aria-label="Toggle sound">
+          <span class="sound-icon" aria-hidden="true">)))</span>
+          <span id="soundLabel">SOUND ON</span>
+        </button>
+      </header>
+
+      <section class="hud" id="hud" aria-live="polite">
+        <div class="hud-mission">
+          <span class="hud-kicker" id="phaseLabel">TRANSMISSION // STANDBY</span>
+          <strong id="objectiveLabel">A small light can carry a whole world.</strong>
+        </div>
+        <div class="signal-meter" aria-label="Signal integrity">
+          <div class="meter-label"><span>SIGNAL INTEGRITY</span><b id="signalValue">00%</b></div>
+          <div class="meter-track"><span id="signalBar"></span></div>
+        </div>
+      </section>
+
+      <section class="screen title-screen is-visible" id="titleScreen">
+        <div class="title-layout">
+          <div class="title-copy">
+            <p class="eyebrow">AN INTERACTIVE SHORT // 05:00</p>
+            <h1>moth<span>//</span>light</h1>
+            <p class="title-deck">Carry one last voice through the Hush.<br />Make it mean something when it arrives.</p>
+            <button class="primary-button" id="startButton" type="button">
+              <span>BEGIN TRANSMISSION</span><i aria-hidden="true">-&gt;</i>
+            </button>
+            <p class="microcopy">Keyboard recommended. Headphones make the dark feel closer.</p>
+          </div>
+          <div class="title-specimen" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="specimen-core"><span></span></div>
+            <span class="specimen-label specimen-label-top">MOTH-07</span>
+            <span class="specimen-label specimen-label-bottom">CARRY / REMEMBER / RETURN</span>
+          </div>
+        </div>
+        <div class="title-footer">
+          <span>NO DOWNLOAD // NO ACCOUNT</span>
+          <span>THE LAST LIGHT STILL KNOWS THE WAY</span>
+        </div>
+      </section>
+
+      <section class="chapter-card" id="chapterCard" aria-live="polite" aria-hidden="true">
+        <div class="chapter-card-inner">
+          <div class="chapter-index" id="chapterIndex">01</div>
+          <div class="chapter-copy">
+            <p class="eyebrow" id="chapterEyebrow">THE FIRST DISTANCE</p>
+            <h2 id="chapterTitle">Cross the Hush</h2>
+            <p id="chapterText">The station has been silent for twelve years. One packet survived inside its smallest machine. Keep it moving.</p>
+            <div class="control-strip" id="controlStrip">
+              <span class="key-chip">WASD / ARROWS</span><span>steer</span>
+              <span class="key-chip">SPACE</span><span>pulse the Hush</span>
+            </div>
+            <button class="primary-button compact" id="continueButton" type="button">
+              <span id="continueLabel">ENTER THE DARK</span><i aria-hidden="true">-&gt;</i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="story-toast" id="storyToast" aria-live="assertive">
+        <span class="toast-rule"></span>
+        <div><small id="toastLabel">MEMORY FRAGMENT</small><p id="toastText"></p></div>
+      </div>
+
+      <div class="phase-hint" id="phaseHint" aria-live="polite"></div>
+
+      <section class="ending-screen" id="endingScreen" aria-hidden="true">
+        <div class="ending-panel" id="endingPanel">
+          <p class="eyebrow">TRANSMISSION READY // CHOOSE WHAT SURVIVES</p>
+          <h2 id="endingHeading">The voice is yours now.</h2>
+          <p class="ending-message" id="endingMessage">Mara's last recording resolves into a room, a window, and someone still waiting on the other side of the dark.</p>
+          <div class="choice-grid" id="choiceGrid">
+            <button class="choice-button" type="button" data-choice="map">
+              <span class="choice-number">01</span>
+              <strong>Send the coordinates</strong>
+              <small>Give them a place to come back to.</small>
+            </button>
+            <button class="choice-button" type="button" data-choice="voice">
+              <span class="choice-number">02</span>
+              <strong>Send the voice</strong>
+              <small>Let the goodbye travel without a destination.</small>
+            </button>
+          </div>
+          <div class="ending-result" id="endingResult" hidden>
+            <p class="result-stamp" id="resultStamp">SIGNAL DELIVERED</p>
+            <h3 id="resultTitle"></h3>
+            <p id="resultText"></p>
+            <div class="result-stats" id="resultStats"></div>
+            <button class="primary-button compact" id="replayButton" type="button"><span>FLY IT AGAIN</span><i aria-hidden="true">-&gt;</i></button>
+          </div>
+        </div>
+      </section>
+
+      <div class="corner-readout corner-left" id="cornerReadout">MOTH-07 / LINK WAITING</div>
+      <div class="corner-readout corner-right" id="cornerRight">BUILD 09.12 / LIVE</div>
+    </main>
+    <script src="./game.js"></script>
+  </body>
+</html>
