@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMBERFALL — The Last Lighthouse</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="stars"></div>
+<div id="wrap">
+  <div id="frame">
+    <canvas id="game" width="960" height="600"></canvas>
+    <div id="overlay">
+      <h1 id="ovTitle">EMBERFALL</h1>
+      <p id="ovSub">The Last Lighthouse</p>
+      <button id="startBtn">🕯 &nbsp;Light the Ember&nbsp; 🕯</button>
+      <p id="ovHint">sound on recommended · keyboard + mouse · ~7 minutes</p>
+    </div>
+    <div id="hud-top">
+      <div id="chapterTag">I · THE DROWNED CROSSING</div>
+      <div id="emberWrap" title="Your ember — if it dies, so do you">
+        <span id="emberIcon">🔥</span>
+        <div id="emberBarOuter"><div id="emberBar"></div></div>
+      </div>
+    </div>
+    <div id="caption"></div>
+    <div id="toast"></div>
+  </div>
+  <div id="below">
+    <div class="controls-card">
+      <div><b>WASD / Arrows</b> — row · climb · run</div>
+      <div><b>SPACE</b> — jump / flare / burn <span class="dim">(context)</span></div>
+      <div><b>K / CLICK</b> — shoo bats <span class="dim">(chapter II)</span></div>
+      <div><b>MOUSE</b> — aim lantern <span class="dim">(chapter III)</span></div>
+      <div><b>M</b> — mute · <b>R</b> — restart checkpoint · <b>ENTER</b> — advance story</div>
+    </div>
+    <p id="foot">A tiny game about carrying light through dark water. Built with canvas + code — no engines, no assets.</p>
+  </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
