@@ -1,0 +1,52 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#03050c}
+body{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;color:#e8e2cf;-webkit-user-select:none;user-select:none;cursor:default}
+#stage{position:fixed;inset:0}
+#cv{position:absolute;inset:0;display:block}
+#vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 46%,transparent 55%,rgba(2,4,10,0.42) 100%)}
+#flash{position:absolute;inset:0;pointer-events:none;background:#fff;opacity:0}
+#flash.boom{animation:boomA .38s ease-out}
+@keyframes boomA{0%{opacity:0.22}100%{opacity:0}}
+#fade{position:absolute;inset:0;background:#02030a;opacity:1;pointer-events:none;z-index:9}
+.bar{position:absolute;left:0;width:100%;height:0;background:#01020a;z-index:4;transition:height .8s cubic-bezier(.4,0,.2,1)}
+#barTop{top:0}
+#barB{bottom:0}
+#barTop.lb,#barB.lb{height:8.5%}
+#titleScreen,#endScreen{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;z-index:5;pointer-events:none;opacity:0;transition:opacity 1.2s ease}
+#titleScreen.show,#endScreen.show{opacity:1}
+#titleScreen{opacity:1}
+#titleScreen.gone{opacity:0}
+.tKick{font-size:15px;letter-spacing:.42em;text-transform:uppercase;color:#9da6c2;opacity:.85;margin-bottom:18px}
+#titleScreen h1,#endScreen h1{font-size:clamp(44px,7vw,84px);font-weight:600;letter-spacing:.30em;text-indent:.30em;color:#f0e9d8;text-shadow:0 0 44px rgba(140,170,220,.45),0 2px 30px rgba(0,0,0,.6)}
+.tSub{font-size:19px;font-style:italic;color:#b9b2a0;margin-top:16px;opacity:.9;max-width:520px}
+.tPrompt{font-size:16px;letter-spacing:.18em;color:#d8cfae;margin-top:44px;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+.tControls{font-size:14.5px;color:#8f96ad;margin-top:26px;line-height:1.9;opacity:.9}
+.tControls b,#pauseOv b{color:#cfc7ad;font-weight:600}
+.tSound{font-size:13px;font-style:italic;color:#77809a;margin-top:14px}
+#card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(680px,86vw);text-align:center;z-index:6;opacity:0;pointer-events:none;transition:opacity .5s ease}
+#card.show{opacity:1}
+#cardKicker{font-size:14px;letter-spacing:.5em;text-transform:uppercase;color:#c9b98a;margin-bottom:26px;min-height:16px}
+#cardText{font-size:clamp(19px,2.4vw,25px);font-style:italic;line-height:1.65;color:#efe8d6;text-shadow:0 2px 24px rgba(0,0,0,.8);min-height:70px}
+#cardHint{font-size:13px;letter-spacing:.15em;color:#9b9377;margin-top:30px;opacity:0}
+#dlg{position:absolute;left:50%;bottom:6.5%;transform:translate(-50%,14px);width:min(760px,90vw);display:flex;align-items:flex-start;gap:18px;padding:20px 26px 18px;background:rgba(5,8,16,.78);border:1px solid rgba(190,180,140,.14);border-radius:4px;z-index:6;opacity:0;pointer-events:none;transition:opacity .45s ease,transform .45s ease}
+#dlg.show{opacity:1;transform:translate(-50%,0)}
+#dlgPort{width:44px;height:44px;border-radius:50%;flex:0 0 44px;margin-top:2px}
+#dlgBody{flex:1;min-width:0}
+#dlgName{font-size:12.5px;letter-spacing:.32em;margin-bottom:7px}
+#dlgText{font-size:19.5px;line-height:1.5;color:#e9e2d0;min-height:56px}
+#dlgHint{position:absolute;right:16px;bottom:8px;font-size:12px;letter-spacing:.14em;color:#9b9377;opacity:0}
+#chapter,#objective,#toast{position:absolute;left:50%;transform:translateX(-50%);text-align:center;z-index:5;pointer-events:none;opacity:0}
+#chapter{top:6.6%;font-size:15px;letter-spacing:.5em;text-indent:.5em;text-transform:uppercase;color:#d3c9a8}
+#chapter.show{opacity:1}
+#objective{top:11.4%;font-size:17px;font-style:italic;color:#e6dcc0;text-shadow:0 1px 16px rgba(0,0,0,.7)}
+#objective.show{opacity:1}
+#toast{bottom:5.2%;font-size:15px;font-style:italic;color:#cfc7ae;text-shadow:0 1px 14px rgba(0,0,0,.8)}
+#toast.show{opacity:1}
+#pauseOv{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(2,4,10,.68);z-index:8;opacity:0;pointer-events:none;transition:opacity .3s}
+#pauseOv.show{opacity:1}
+.pTitle{font-size:34px;letter-spacing:.5em;text-indent:.5em;color:#e8e0cc}
+.pSub{font-size:16px;font-style:italic;color:#a49c84;margin-top:10px}
+.pControls{font-size:14.5px;color:#8f96ad;margin-top:30px;line-height:1.9;text-align:center}
+.pHint{font-size:13px;letter-spacing:.2em;color:#cfc7ad;margin-top:26px}
+#endScreen{z-index:7}

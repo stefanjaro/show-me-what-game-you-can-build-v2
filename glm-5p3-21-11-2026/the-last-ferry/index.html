@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>The Last Ferry</title>
+<meta name="description" content="A night on the water between worlds. Five souls. One boat. Your final crossing."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="stage">
+  <canvas id="cv"></canvas>
+  <div id="vig"></div>
+  <div id="flash"></div>
+  <div class="bar" id="barTop"></div>
+  <div class="bar" id="barB"></div>
+
+  <div id="titleScreen">
+    <div class="tKick">a night on the water between worlds</div>
+    <h1>THE LAST FERRY</h1>
+    <div class="tSub">Five souls wait at the crossing. One boat goes out to meet them.</div>
+    <div class="tPrompt">press enter — or click — to begin</div>
+    <div class="tControls">
+      row <b>W / ↑</b> &nbsp;·&nbsp; steer <b>A D / ← →</b> &nbsp;·&nbsp; slow <b>S / ↓</b><br/>
+      continue <b>space / click</b> &nbsp;·&nbsp; pause <b>esc</b> &nbsp;·&nbsp; mute <b>m</b>
+    </div>
+    <div class="tSound">best experienced with sound on</div>
+  </div>
+
+  <div id="card">
+    <div id="cardKicker"></div>
+    <div id="cardText"></div>
+    <div id="cardHint">space · click ▸</div>
+  </div>
+
+  <div id="dlg">
+    <div id="dlgPort"></div>
+    <div id="dlgBody">
+      <div id="dlgName"></div>
+      <div id="dlgText"></div>
+    </div>
+    <div id="dlgHint">space · click ▸</div>
+  </div>
+
+  <div id="chapter"></div>
+  <div id="objective"></div>
+  <div id="toast"></div>
+
+  <div id="pauseOv">
+    <div class="pTitle">PAUSED</div>
+    <div class="pSub">the river waits</div>
+    <div class="pControls">
+      row <b>W / ↑</b> · steer <b>A D / ← →</b> · slow <b>S / ↓</b><br/>
+      continue <b>space / click</b> · mute <b>m</b>
+    </div>
+    <div class="pHint">esc — row on</div>
+  </div>
+
+  <div id="endScreen">
+    <div class="tKick">the crossing is complete</div>
+    <h1>THE LAST FERRY</h1>
+    <div class="tPrompt">press enter — row again</div>
+  </div>
+
+  <div id="fade"></div>
+</div>
+<script src="js/util.js"></script>
+<script src="js/input.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/world.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/render.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
