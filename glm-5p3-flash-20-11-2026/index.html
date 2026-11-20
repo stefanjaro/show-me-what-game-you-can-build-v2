@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HALCYON DEEP — a sonar ghost story</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%237fe8d8' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%237fe8d8'/%3E%3C/svg%3E"/>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<div id="ui">
+  <div id="title" class="panel hidden">
+    <div class="t-kicker">a sonar ghost story</div>
+    <h1 class="t-logo">HALCYON&nbsp;DEEP</h1>
+    <div class="t-line"></div>
+    <p class="t-press" id="title-press">press any key to dive</p>
+    <div class="t-controls">
+      <div><span class="k">W A S D</span> drift</div>
+      <div><span class="k">SPACE</span> sing &mdash; hold to sing louder</div>
+      <div><span class="k">SHIFT</span> brake &mdash; silence is safety</div>
+      <div><span class="k">M</span> mute &nbsp;&nbsp; <span class="k">P</span> pause</div>
+    </div>
+    <div class="t-foot" id="title-continue"></div>
+  </div>
+
+  <div id="chapter" class="panel hidden">
+    <div class="c-num" id="ch-num"></div>
+    <h2 class="c-name" id="ch-name"></h2>
+    <div class="t-line"></div>
+    <p class="c-sub" id="ch-sub"></p>
+    <p class="t-press">press SPACE</p>
+  </div>
+
+  <div id="intro" class="panel hidden">
+    <div id="intro-lines"></div>
+    <p class="t-press hidden" id="intro-press">press ENTER</p>
+  </div>
+
+  <div id="log" class="hidden">
+    <div class="log-box">
+      <div class="log-speaker" id="log-speaker"></div>
+      <div class="log-text" id="log-text"></div>
+      <div class="log-press hidden" id="log-press">ENTER</div>
+    </div>
+  </div>
+
+  <div id="death" class="hidden">
+    <div class="d-text">the deep lets you go.</div>
+  </div>
+
+  <div id="pause" class="panel hidden">
+    <h2 class="c-name">PAUSED</h2>
+    <p class="c-sub">P &mdash; resume &nbsp; M &mdash; mute &nbsp; R &mdash; restart chapter</p>
+  </div>
+
+  <div id="end" class="panel hidden">
+    <div id="end-lines"></div>
+    <div id="end-stats"></div>
+    <p class="t-press hidden" id="end-press">R &mdash; dive again</p>
+  </div>
+
+  <div id="hint" class="hidden"></div>
+</div>
+
+<script src="js/audio.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/world.js"></script>
+<script src="js/logic.js"></script>
+<script src="js/render.js"></script>
+</body>
+</html>
