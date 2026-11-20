@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070b15" />
+    <meta name="description" content="A short playable story about a tiny courier, a drowned world, and the song that found its way home." />
+    <title>The Last Lighthouse — A playable story</title>
+    <link rel="stylesheet" href="game.css" />
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="masthead">
+        <div class="brand-lockup" aria-label="The Deep-Sky Post, field note 04">
+          <span class="brand-seal" aria-hidden="true"><i></i></span>
+          <span class="brand-copy">
+            <span class="brand-name">THE DEEP-SKY POST</span>
+            <span class="brand-edition">FIELD NOTE <b>04</b> <span class="brand-divider">/</span> COASTAL RELAY</span>
+          </span>
+        </div>
+
+        <div class="receiver-status" aria-label="Receiver waiting">
+          <span class="receiver-dot" aria-hidden="true"></span>
+          <span>RECEIVER WINDOW</span>
+          <b>OPEN</b>
+        </div>
+
+        <div class="masthead-tools">
+          <button class="quiet-button" id="helpButton" type="button" aria-label="How to play">
+            <span class="button-glyph" aria-hidden="true">?</span>
+            <span>FLIGHT MANUAL</span>
+          </button>
+          <button class="quiet-button sound-button" id="soundButton" type="button" aria-pressed="true" aria-label="Sound on">
+            <span class="sound-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span id="soundLabel">SOUND ON</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="screen-frame" aria-label="The Last Lighthouse game">
+        <canvas id="gameCanvas" width="1280" height="720" aria-label="A moonlit ocean and star field. Use the keyboard to guide a glowing moth." tabindex="0">
+          Your browser does not support the Canvas game. Please try a current version of Safari, Chrome, or Firefox.
+        </canvas>
+        <div class="glass-grain" aria-hidden="true"></div>
+        <div id="caption" class="caption" aria-live="polite" aria-atomic="true"></div>
+
+        <div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="overlayTitle" aria-describedby="overlayCopy">
+          <div class="overlay-card">
+            <p class="overlay-kicker" id="overlayKicker">A SHORT PLAYABLE STORY <span>·</span> 04 MIN</p>
+            <h1 id="overlayTitle">THE LAST<br />LIGHTHOUSE</h1>
+            <p class="overlay-copy" id="overlayCopy">
+              The sea climbed the sky. Sola stayed behind in the last lighthouse; her daughter, Aster, sailed for a new world. Tonight their ships pass within listening range—for seven seconds. You are MOTH-4. You carry the lullaby.
+            </p>
+            <div id="overlayDetails" class="overlay-details">
+              <div class="control-deck" aria-label="Game controls">
+                <div class="control-card"><span class="keycap">W A S D</span><span class="keycap keycap-arrows">↑ ← ↓ →</span><span class="control-label">STEER</span></div>
+                <div class="control-card"><span class="keycap keycap-wide">SPACE</span><span class="control-label">DASH · PING · PLAY</span></div>
+                <div class="control-card"><span class="keycap keycap-wide">ESC</span><span class="control-label">PAUSE</span></div>
+              </div>
+              <p class="mission-note"><span class="note-star" aria-hidden="true">✳</span> Three movements. One little song. No wrong way to hear it.</p>
+            </div>
+            <div class="overlay-actions">
+              <button id="primaryButton" class="primary-button" type="button">
+                <span id="primaryLabel">CARRY THE SONG</span><span class="button-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button id="secondaryButton" class="secondary-button" type="button" hidden></button>
+            </div>
+            <p class="overlay-footnote" id="overlayFootnote">HEADPHONES OPTIONAL <span>·</span> ARROW KEYS OR WASD</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="instrument-bar">
+        <div class="instrument-left">
+          <span class="instrument-led" aria-hidden="true"></span>
+          <span id="stageReadout">STANDBY</span>
+          <span class="instrument-divider">/</span>
+          <span id="progressReadout">AWAITING PILOT</span>
+        </div>
+        <div class="instrument-center" id="controlReadout">A SMALL STORY ABOUT MAKING IT HOME</div>
+        <div class="instrument-right"><span class="esc-key">ESC</span><span>PAUSE</span></div>
+      </footer>
+    </main>
+  </body>
+</html>
