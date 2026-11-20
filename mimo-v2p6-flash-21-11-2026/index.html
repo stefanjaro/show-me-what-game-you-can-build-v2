@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>VIGIL — The Last Lighthouse</title>
+<meta name="description" content="Keep the light. Bring them home. One night at Cape Mourn."/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23e8c477'/%3E%3C/svg%3E"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="stage">
+  <canvas id="game" width="1280" height="720"></canvas>
+  <div id="ui">
+
+    <div id="title" class="screen">
+      <div class="title-block">
+        <div class="kicker">A NIGHT AT CAPE MOURN</div>
+        <h1>VIGIL</h1>
+        <div class="sub">the last lighthouse</div>
+        <div class="controls">
+          <div class="ctl"><span class="keys"><kbd>&larr;</kbd><kbd>&rarr;</kbd> / <kbd>A</kbd><kbd>D</kbd></span><span class="lbl">swing the light</span></div>
+          <div class="ctl"><span class="keys"><kbd>SPACE</kbd></span><span class="lbl">flare &mdash; burn the dark</span></div>
+          <div class="ctl"><span class="keys"><kbd>MOUSE</kbd></span><span class="lbl">aim the beam</span></div>
+          <div class="ctl"><span class="keys"><kbd>M</kbd><kbd>P</kbd></span><span class="lbl">sound &nbsp;&middot;&nbsp; pause</span></div>
+        </div>
+        <div class="pitch">KEEP THE LIGHT. BRING THEM HOME.</div>
+        <div class="press blink">PRESS ANY KEY</div>
+      </div>
+    </div>
+
+    <div id="story" class="screen hidden">
+      <div class="story-inner">
+        <div class="story-heading"></div>
+        <div class="story-lines"></div>
+        <div class="story-prompt blink">SPACE &#9656;</div>
+      </div>
+    </div>
+
+    <div id="fail" class="screen hidden">
+      <div class="card">
+        <div class="card-mark">&#10022;</div>
+        <h2 id="fail-title">THE LIGHT WENT OUT</h2>
+        <p id="fail-body">The sea closes over the harbour.</p>
+        <div class="press blink" id="fail-prompt">PRESS SPACE TO RELIGHT</div>
+      </div>
+    </div>
+
+    <div id="end" class="screen hidden">
+      <div class="card end-card">
+        <div class="kicker">EPILOGUE</div>
+        <h2>THE SUN IS UP</h2>
+        <div id="end-stats"></div>
+        <div class="press blink">PRESS R TO KEEP THE LIGHT AGAIN</div>
+      </div>
+    </div>
+
+    <div id="pause" class="screen hidden">
+      <div class="card">
+        <h2>PAUSED</h2>
+        <div class="press">PRESS P TO RETURN TO THE LAMP</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script src="js/util.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
