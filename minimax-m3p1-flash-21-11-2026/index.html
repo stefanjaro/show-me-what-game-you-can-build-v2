@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EMBERWAKE — A Night in the Lamp Room</title>
+<meta name="description" content="Keep the last flame of Vell alive. A ten-minute story of light, weather, and what it costs to keep other people warm." />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="stage">
+  <canvas id="bg"></canvas>
+  <canvas id="fx"></canvas>
+  <canvas id="fg"></canvas>
+
+  <div id="flash"></div>
+
+  <div id="hud" class="off">
+    <div class="gauge" id="gaugeLamp">
+      <div class="glabel">LAMP</div>
+      <div class="gtrack"><div class="gfill lamp" id="lampFill"></div></div>
+    </div>
+    <div class="gauge" id="gaugeCity">
+      <div class="glabel">VELL</div>
+      <div class="gtrack"><div class="gfill city" id="cityFill"></div></div>
+    </div>
+    <div id="combo"></div>
+    <div id="prompt"></div>
+    <div id="readout"></div>
+  </div>
+
+  <div id="caption"><span id="captionText"></span></div>
+
+  <div id="choice" class="off">
+    <div id="choiceHead">
+      <span id="choiceTitle"></span>
+      <div id="choiceTimerWrap"><div id="choiceTimer"></div></div>
+    </div>
+    <div id="choiceCards"></div>
+  </div>
+
+  <div id="actcard" class="off">
+    <div class="kicker" id="actKicker"></div>
+    <div class="actTitle" id="actTitle"></div>
+    <div class="actLine" id="actLine"></div>
+  </div>
+
+  <div id="title">
+    <div id="titleInner">
+      <div class="kicker">A NIGHT IN THE LAMP ROOM</div>
+      <h1>EMBERWAKE</h1>
+      <div class="rule"></div>
+      <p id="prologue"></p>
+      <div id="controls">
+        <div class="crow"><span class="ck">SPACE</span><span class="cd">keep the flame's heart / open the door</span></div>
+        <div class="crow"><span class="ck">1 2 3</span><span class="cd">choose what to give</span></div>
+        <div class="crow"><span class="ck">W A S D</span><span class="cd">brace against the wind</span></div>
+      </div>
+      <div class="start">PRESS <kbd>ENTER</kbd> TO KEEP THE LAMP</div>
+      <div class="tiny">sound is part of the game &mdash; headphones recommended &middot; M to mute</div>
+    </div>
+  </div>
+
+  <div id="endscreen" class="off">
+    <div id="endInner">
+      <div class="kicker" id="endKicker"></div>
+      <h2 id="endTitle"></h2>
+      <p id="endBody"></p>
+      <div id="endStats"></div>
+      <div class="start">PRESS <kbd>ENTER</kbd> TO STAND ANOTHER WATCH</div>
+    </div>
+  </div>
+
+  <div id="letterbox"><div class="lb top"></div><div class="lb bottom"></div></div>
+  <div id="fadeout"></div>
+</div>
+
+<script src="js/util.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/flame.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
